@@ -10,6 +10,7 @@ public class Cell {
     }
     
     public void setOccupied(boolean oc){
+        // No recomenado para usar
         this.occupied = oc;
     }
     public void setPiece(Piece piece){
