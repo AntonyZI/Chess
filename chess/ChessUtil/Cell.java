@@ -16,8 +16,11 @@ public class Cell {
     public void setPiece(Piece piece){
         this.piece = piece;
         if(piece == null){
+            //System.out.println("Piece is null:");
+            //System.out.println(piece);
             setOccupied(false);
         } else {
+            //System.out.println("Piece is occupied");
             setOccupied(true);
         }
     }

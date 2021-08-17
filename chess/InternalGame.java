@@ -15,7 +15,8 @@ public class InternalGame {
         String strOut = "";
         for(int j=0;j<chessboard.length;j++){
             for(int i=0;i<chessboard[j].length;i++){
-                System.out.println("("+i+"; "+j+"): "+chessboard[j][i]);
+                //System.out.print("("+i+"; "+j+"): "+chessboard[j][i]);
+                //System.out.println(" - "+chessboard[j][i].isOccupied());
                 if(chessboard[j][i].isOccupied()){
                     strOut += chessboard[j][i].getPiece().getChar()+" ";
                 } else {
@@ -26,6 +27,7 @@ public class InternalGame {
         }
         return strOut;
     }
+    
     public static InternalGame autoGenChessboard(){
         InternalGame inGame = new InternalGame();
         for(int j=0;j<inGame.chessboard.length;j++){

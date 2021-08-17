@@ -13,25 +13,24 @@ public class Piece {
     }
     
     public static Piece autogen(int posX,int posY){
-        Piece autoP;
         int rndPiece = (int)(Math.random()*PIECES.length);
+        //System.out.println(rndPiece);
         switch(rndPiece){
             case 0:
-                 autoP = new Pawn(posX,posY);
+                 return new Pawn(posX,posY);
             case 1:
-                 autoP = new Rook(posX,posY);
+                 return new Rook(posX,posY);
             case 2:
-                 autoP = new Knight(posX,posY);
+                 return new Knight(posX,posY);
             case 3:
-                 autoP = new Bishop(posX,posY);
+                 return new Bishop(posX,posY);
             case 4:
-                 autoP = new Queen(posX,posY);
+                 return new Queen(posX,posY);
             case 5:
-                 autoP = new King(posX,posY);
+                 return new King(posX,posY);
             default:
-                autoP = null;
+                return null;
         }
-        return autoP;
     }
     
     public char getChar(){
