@@ -11,6 +11,11 @@ public class Piece {
         setPosY(posY);
     }
     
+    public char getChar(){
+        // Dummy method
+        return 5; // Represents the 5th character to java: 
+    }
+    
     public void setPosX(int posX){
         this.posX = posX;
     }

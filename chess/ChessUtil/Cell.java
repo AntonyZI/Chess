@@ -14,6 +14,14 @@ public class Cell {
     }
     public void setPiece(Piece piece){
         this.piece = piece;
+        if(piece == null){
+            setOccupied(false);
+        } else {
+            setOccupied(true);
+        }
+    }
+    public boolean isOccupied(){
+        return this.occupied;
     }
     public Piece getPiece(){
         return this.piece;
