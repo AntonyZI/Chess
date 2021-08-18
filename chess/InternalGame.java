@@ -45,6 +45,19 @@ public class InternalGame {
     public void resetStartGame(){
         // This code will do the same as static method genStartGame
         // but in the object (won't generate anything)
+        Cell.setAdvancedArmyRow(0,getChessboard()[0]);
+        Cell.setBasicArmyRow(1,getChessboard()[1]);
+        for(int j=0;j<=1;j++){
+            Cell.setTeamToRow(getChessboard()[j],getTeams()[0]);
+        }
+        for(int j=2;j<=5;j++){
+            Cell.setEmptyRow(getChessboard()[j]);
+        }
+        Cell.setBasicArmyRow(6,getChessboard()[6]);
+        Cell.setAdvancedArmyRow(7,getChessboard()[7]);
+        for(int j=6;j<=7;j++){
+            Cell.setTeamToRow(getChessboard()[j],getTeams()[1]);
+        }
     }
     
     public void setChessboard(Cell[][] chessboard){
@@ -64,19 +77,9 @@ public class InternalGame {
         InternalGame inGame = new InternalGame();
         inGame.setTeams(InternalGame.autogenTeams());
         
-        inGame.getChessboard()[0] = Cell.getAdvancedArmyRow(0);
-        inGame.getChessboard()[1] = Cell.getBasicArmyRow(1);
-        for(int j=0;j<=1;j++){
-            Cell.setTeamToRow(inGame.getChessboard()[j],inGame.getTeams()[0]);
-        }
-        for(int j=2;j<=5;j++){
+        for(int j=0;j<inGame.getChessboard().length;j++)
             inGame.getChessboard()[j] = Cell.getEmptyRow();
-        }
-        inGame.getChessboard()[6] = Cell.getAdvancedArmyRow(6);
-        inGame.getChessboard()[7] = Cell.getBasicArmyRow(7);
-        for(int j=6;j<=7;j++){
-            Cell.setTeamToRow(inGame.getChessboard()[j],inGame.getTeams()[1]);
-        }
+        inGame.resetStartGame();
         
         return inGame;
     }
