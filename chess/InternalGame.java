@@ -32,6 +32,35 @@ public class InternalGame {
         return strOut;
     }
     
+    public static InternalGame genStartGame(){
+        InternalGame inGame = new InternalGame();
+        inGame.setTeams(InternalGame.autogenTeams());
+        
+        inGame.getChessboard()[0] = Cell.getAdvancedArmyRow(0);
+        inGame.getChessboard()[1] = Cell.getBasicArmyRow(1);
+        for(int j=0;j<=1;j++){
+            for(int i=0;i<inGame.getChessboard()[j].length;i++){
+                inGame.getChessboard()[j][i].getPiece().setTeam(
+                        inGame.getTeams()[0]
+                );
+            }
+        }
+        for(int j=2;j<=5;j++){
+            inGame.getChessboard()[j] = Cell.getEmptyRow();
+        }
+        inGame.getChessboard()[6] = Cell.getAdvancedArmyRow(6);
+        inGame.getChessboard()[7] = Cell.getBasicArmyRow(7);
+        for(int j=6;j<=7;j++){
+            for(int i=0;i<inGame.getChessboard()[j].length;i++){
+                inGame.getChessboard()[j][i].getPiece().setTeam(
+                        inGame.getTeams()[1]
+                );
+            }
+        }
+        
+        return inGame;
+    }
+    
     public static Team[] autogenTeams(){
         Team[] tms = new Team[2];
         tms[0] = new Team("White",Color.WHITE);
@@ -73,5 +102,7 @@ public class InternalGame {
         Team[] teams = InternalGame.autogenTeams();
         InternalGame theGame = InternalGame.autogenChessboard(teams);
         System.out.println(theGame.getChessBoardString());
+        System.out.println("");
+        System.out.println(InternalGame.genStartGame().getChessBoardString());
     }
 }
