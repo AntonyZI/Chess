@@ -6,6 +6,7 @@ public class Piece {
     public static char[] PIECES = {'P','R','N','B','Q','K'};
     private int posX;
     private int posY;
+    private Team teamPiece;
     
     public Piece(int posX,int posY){
         setPosX(posX);
@@ -44,11 +45,17 @@ public class Piece {
     public void setPosY(int posY){
         this.posY = posY;
     }
+    public void setTeam(Team t){
+        this.teamPiece = t;
+    }
     
     public int getPosX(){
         return this.posX;
     }
     public int getPosY(){
         return this.posY;
+    }
+    public Team getTeam(){
+        return this.teamPiece;
     }
 }
