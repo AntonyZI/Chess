@@ -8,9 +8,10 @@ import java.awt.Color;
 public class InternalGame {
     private Cell[][] chessboard = new Cell[8][8];
     private Team[] teams;
+    private int turn;
     
     public InternalGame(){
-        
+        turn = 0;
     }
     
     public boolean validateMove(int posX1,int posY1,int posX2,int posY2){
@@ -39,6 +40,7 @@ public class InternalGame {
             }
             strOut += "\n";
         }
+        strOut += "Turn : Team "+turn+" - "+teams[turn].getName();
         return strOut;
     }
     
