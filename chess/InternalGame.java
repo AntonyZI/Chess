@@ -67,11 +67,7 @@ public class InternalGame {
         inGame.getChessboard()[0] = Cell.getAdvancedArmyRow(0);
         inGame.getChessboard()[1] = Cell.getBasicArmyRow(1);
         for(int j=0;j<=1;j++){
-            for(int i=0;i<inGame.getChessboard()[j].length;i++){
-                inGame.getChessboard()[j][i].getPiece().setTeam(
-                        inGame.getTeams()[0]
-                );
-            }
+            Cell.setTeamToRow(inGame.getChessboard()[j],inGame.getTeams()[0]);
         }
         for(int j=2;j<=5;j++){
             inGame.getChessboard()[j] = Cell.getEmptyRow();
@@ -79,11 +75,7 @@ public class InternalGame {
         inGame.getChessboard()[6] = Cell.getAdvancedArmyRow(6);
         inGame.getChessboard()[7] = Cell.getBasicArmyRow(7);
         for(int j=6;j<=7;j++){
-            for(int i=0;i<inGame.getChessboard()[j].length;i++){
-                inGame.getChessboard()[j][i].getPiece().setTeam(
-                        inGame.getTeams()[1]
-                );
-            }
+            Cell.setTeamToRow(inGame.getChessboard()[j],inGame.getTeams()[1]);
         }
         
         return inGame;
