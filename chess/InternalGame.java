@@ -13,6 +13,16 @@ public class InternalGame {
         
     }
     
+    public boolean validateMove(int posX1,int posY1,int posX2,int posY2){
+        // Verify if a move is valid to been performed
+        // then this move won't have errors when used in move()
+        return false;
+    }
+    public void move(int posX1,int posY1,int posX2,int posY2){
+        // Will move a piece to another position, "killing" a piece if there
+        // is one in that place
+    }
+    
     public String getChessBoardString(){
         String strOut = "";
         for(int j=0;j<chessboard.length;j++){
@@ -30,6 +40,24 @@ public class InternalGame {
             strOut += "\n";
         }
         return strOut;
+    }
+    
+    public void resetStartGame(){
+        // This code will do the same as static method genStartGame
+        // but in the object (won't generate anything)
+    }
+    
+    public void setChessboard(Cell[][] chessboard){
+        this.chessboard = chessboard;
+    }
+    public void setTeams(Team[] teams){
+        this.teams = teams;
+    }
+    public Cell[][] getChessboard(){
+        return this.chessboard;
+    }
+    public Team[] getTeams(){
+        return this.teams;
     }
     
     public static InternalGame genStartGame(){
@@ -84,25 +112,7 @@ public class InternalGame {
         return inGame;
     }
     
-    public void setChessboard(Cell[][] chessboard){
-        this.chessboard = chessboard;
-    }
-    public void setTeams(Team[] teams){
-        this.teams = teams;
-    }
-    public Cell[][] getChessboard(){
-        return this.chessboard;
-    }
-    public Team[] getTeams(){
-        return this.teams;
-    }
-    
-    
     public static void main(String[] args){
-        Team[] teams = InternalGame.autogenTeams();
-        InternalGame theGame = InternalGame.autogenChessboard(teams);
-        System.out.println(theGame.getChessBoardString());
-        System.out.println("");
         System.out.println(InternalGame.genStartGame().getChessBoardString());
     }
 }
