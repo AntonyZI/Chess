@@ -23,6 +23,10 @@ public class InternalGame {
         // Will move a piece to another position, "killing" a piece if there
         // is one in that place
     }
+    public boolean isKingTeamCheck(Team tm){
+        // Verifies if the king of a team is save
+        return false;
+    }
     
     public String getChessBoardString(){
         String strOut = "";
