@@ -18,9 +18,12 @@ public class Team {
     
     public void addPiece(Piece piece){
         pieces.add(piece);
+        piece.setTeam(this);
     }
     public void removePiece(Piece piece){
-        pieces.remove(piece);
+        if(pieces.remove(piece)){
+            piece.setTeam(null);
+        }
     }
     
     public String getName() {
