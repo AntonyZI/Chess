@@ -6,9 +6,6 @@ public class King extends Piece{
 
     public King(int posX, int posY) {
         super(posX, posY);
-    }
-    
-    public char getChar(){
-        return 'K';
+        this.setRepChar(Piece.PIECES[5]);
     }
 }

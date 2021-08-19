@@ -6,9 +6,6 @@ public class Bishop extends Piece{
 
     public Bishop(int posX, int posY) {
         super(posX, posY);
-    }
-    
-    public char getChar(){
-        return 'B';
+        this.setRepChar(Piece.PIECES[3]);
     }
 }

@@ -7,6 +7,7 @@ public class Piece {
     private int posX;
     private int posY;
     private Team teamPiece;
+    private char repChar;
     
     public Piece(int posX,int posY){
         setPosX(posX);
@@ -34,9 +35,12 @@ public class Piece {
         }
     }
     
-    public char getChar(){
-        // Dummy method
-        return 5; // Represents the 5th character to java: 
+    public char getRepChar(){
+        // No more dummy method
+        return repChar;
+    }
+    public void setRepChar(char ch){
+        this.repChar = ch;
     }
     
     public void setPosX(int posX){
@@ -64,5 +68,9 @@ public class Piece {
     }
     public Team getTeam(){
         return this.teamPiece;
+    }
+    
+    public String toString(){
+        return "("+this.getTeam().getName()+")"+this.getRepChar();
     }
 }

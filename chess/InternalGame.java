@@ -35,8 +35,9 @@ public class InternalGame {
                 //System.out.print("("+i+"; "+j+"): "+chessboard[j][i]);
                 //System.out.println(" - "+chessboard[j][i].isOccupied());
                 if(chessboard[j][i].isOccupied()){
-                    strOut += "("+chessboard[j][i].getPiece().getTeam().getName()+")";
-                    strOut += chessboard[j][i].getPiece().getChar()+" ";
+                    //strOut += "("+chessboard[j][i].getPiece().getTeam().getName()+")";
+                    //strOut += chessboard[j][i].getPiece().getChar()+" ";
+                    strOut += chessboard[j][i].getPiece().toString()+" ";
                 } else {
                     strOut += "(-----)";
                     strOut += "- ";
@@ -115,5 +116,6 @@ public class InternalGame {
     
     public static void main(String[] args){
         System.out.println(InternalGame.genStartGame().getChessBoardString());
+        
     }
 }
