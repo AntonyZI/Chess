@@ -46,6 +46,10 @@ public class Piece {
         this.posY = posY;
     }
     public void setTeam(Team t){
+        if(teamPiece != null){
+            teamPiece.removePiece(this);
+        }
+        t.addPiece(this);
         this.teamPiece = t;
     }
     
