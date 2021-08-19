@@ -35,6 +35,18 @@ public class Piece {
         }
     }
     
+    public boolean isLegalMove(Cell[][] cb,int[] move){
+    // Verifies if the "move" is a legal move in the "cb" chessboard
+    // This method is dummy
+        return false;
+    }
+    public int[] legalMoves(Cell[][] cb){
+    // Returns an array of positions representing legal moves for this piece
+    // in the cb chessboard
+    // This method is dummy
+        return null;
+    }
+    
     public char getRepChar(){
         // No more dummy method
         return repChar;
