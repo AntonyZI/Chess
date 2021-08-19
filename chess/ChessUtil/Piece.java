@@ -50,6 +50,9 @@ public class Piece {
             teamPiece.removePiece(this);
         }
         t.addPiece(this);
+        //this.teamPiece = t;
+    }
+    public void onlySetTeam(Team t){
         this.teamPiece = t;
     }
     

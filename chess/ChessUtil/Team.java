@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Team {
     private String name;
     private Color teamColor;
-    private ArrayList<Piece> pieces;
+    private ArrayList<Piece> pieces = new ArrayList<Piece>();
     
     public Team(String n,Color tC){
         setName(n);
@@ -18,11 +18,11 @@ public class Team {
     
     public void addPiece(Piece piece){
         pieces.add(piece);
-        piece.setTeam(this);
+        piece.onlySetTeam(this);
     }
     public void removePiece(Piece piece){
         if(pieces.remove(piece)){
-            piece.setTeam(null);
+            piece.onlySetTeam(null);
         }
     }
     
