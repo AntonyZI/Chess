@@ -25,20 +25,20 @@ public class Cell {
             row[i].setPiece(null);
         }
     }
-    public static Cell[] getBasicArmyRow(int posY){
+    public static Cell[] getBasicArmyRow(int posY,int facing){
     //Returns a row of cells with pawns without a team
         Cell[] emptyR = new Cell[8];
         for(int i=0;i<emptyR.length;i++){
             emptyR[i] = new Cell();
         }
-        setBasicArmyRow(posY,emptyR);
+        setBasicArmyRow(posY,emptyR,facing);
         return emptyR;
     }
-    public static void setBasicArmyRow(int posY,Cell[] row){
+    public static void setBasicArmyRow(int posY,Cell[] row,int facing){
     // Makes every cell in row to have a basic army piece
     // the row must not have null objects in it
         for(int i=0;i<row.length;i++){
-            row[i].setPiece(new Pawn(i,posY));
+            row[i].setPiece(new Pawn(i,posY,facing));
         }
     }
     public static Cell[] getAdvancedArmyRow(int posY){

@@ -19,7 +19,7 @@ public class Piece {
         //System.out.println(rndPiece);
         switch(rndPiece){
             case 0:
-                 return new Pawn(posX,posY);
+                 return new Pawn(posX,posY,(int)(Math.random()*4+1));
             case 1:
                  return new Rook(posX,posY);
             case 2:

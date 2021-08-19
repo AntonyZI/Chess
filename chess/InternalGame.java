@@ -25,6 +25,7 @@ public class InternalGame {
     }
     public boolean isKingTeamCheck(Team tm){
         // Verifies if the king of a team is save
+        // the tm team must have a king on it and the team must exist in teams
         return false;
     }
     
@@ -53,14 +54,14 @@ public class InternalGame {
         // This code will do the same as static method genStartGame
         // but in the object (won't generate anything)
         Cell.setAdvancedArmyRow(0,getChessboard()[0]);
-        Cell.setBasicArmyRow(1,getChessboard()[1]);
+        Cell.setBasicArmyRow(1,getChessboard()[1],Pawn.SOUTH);
         for(int j=0;j<=1;j++){
             Cell.setTeamToRow(getChessboard()[j],getTeams()[0]);
         }
         for(int j=2;j<=5;j++){
             Cell.setEmptyRow(getChessboard()[j]);
         }
-        Cell.setBasicArmyRow(6,getChessboard()[6]);
+        Cell.setBasicArmyRow(6,getChessboard()[6],Pawn.NORTH);
         Cell.setAdvancedArmyRow(7,getChessboard()[7]);
         for(int j=6;j<=7;j++){
             Cell.setTeamToRow(getChessboard()[j],getTeams()[1]);
